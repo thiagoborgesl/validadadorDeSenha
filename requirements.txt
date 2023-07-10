@@ -14,3 +14,4 @@ urllib3==2.0.3
 Werkzeug==2.3.6
 zipp==3.6.0
 zxcvbn==4.4.28
+gunicorn
