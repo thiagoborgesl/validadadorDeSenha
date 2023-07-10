@@ -318,7 +318,7 @@ p {
 .bar-segment {
     width: 24.5%; /* 100% / 4 - aproximadamente a largura da separação */
     height: 100%;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 .bar-segment.empty {
