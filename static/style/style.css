@@ -34,10 +34,32 @@ h1.title-icon::after {
 }
 
 
-
+/*
 header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+header img {
+    width: 250px; /* Altere para o tamanho desejado 
+    height: auto; /* Mantém as proporções da imagem 
+}
+
+header img:nth-child(1) {
+    grid-column: 2;
+    margin-left: auto;
+}
+
+header img:nth-child(2) {
+    grid-column: 4;
+}
+*/
+header {
+    display: grid;
+    grid-template-columns: 1fr;
     align-items: center;
     gap: 10px;
     padding: 20px;
@@ -49,12 +71,32 @@ header img {
 }
 
 header img:nth-child(1) {
-    grid-column: 2;
-    margin-left: auto;
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0 auto;
 }
 
 header img:nth-child(2) {
-    grid-column: 4;
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+    header {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    header img:nth-child(1) {
+        grid-column: 2;
+        grid-row: 1;
+        margin-left: auto;
+    }
+
+    header img:nth-child(2) {
+        grid-column: 4;
+        grid-row: 1;
+    }
 }
 
 #title {
