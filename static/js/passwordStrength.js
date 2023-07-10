@@ -64,6 +64,28 @@ $(window).on('load', function() {
                             break;
                     }
 
+                    switch(result.score) {
+                        case 1:
+                            $("#bar-segment-1").removeClass('empty average good excellent').addClass('bad');
+                            $("#bar-segment-2, #bar-segment-3, #bar-segment-4").removeClass('bad average good excellent').addClass('empty');
+                            break;
+                        case 2:
+                            $("#bar-segment-1, #bar-segment-2").removeClass('empty bad good excellent').addClass('average');
+                            $("#bar-segment-3, #bar-segment-4").removeClass('bad average good excellent').addClass('empty');
+                            break;
+                        case 3:
+                            $("#bar-segment-1, #bar-segment-2, #bar-segment-3").removeClass('empty bad average excellent').addClass('good');
+                            $("#bar-segment-4").removeClass('bad average good excellent').addClass('empty');
+                            break;
+                        case 4:
+                            $("#bar-segment-1, #bar-segment-2, #bar-segment-3, #bar-segment-4").removeClass('empty bad average good').addClass('excellent');
+                            break;
+                        default: // case 0 and anything else
+                        $("#bar-segment-1").removeClass('empty average good excellent').addClass('bad');
+                        $("#bar-segment-2, #bar-segment-3, #bar-segment-4").removeClass('bad average good excellent').addClass('empty');
+                            break;
+                    }
+
 
                     $("#passwordStrengthBar .progress").css("background-color", strengthColor);
                     $("#passwordStrengthBar .progress").css("width", strengthPercentage);
