@@ -8,6 +8,32 @@ body {
     margin: 0;
     background: linear-gradient(to top right, rgba(0,105,174,1), rgba(0,191,223,1));
 }
+/*
+h1.title-icon {
+    background-image: url('key.svg');
+    background-repeat: no-repeat;
+    background-position: right; 
+    background-size: contain /* Ajuste o tamanho conforme necessário 
+}
+*/
+
+h1.title-icon {
+    position: relative;
+}
+
+h1.title-icon::after {
+    content: "";
+    display: inline-block;
+    width: 80px; 
+    height: 80px; 
+    margin-top: -25px;
+    margin-left: -140px;
+    background: url('key.svg') no-repeat center center / contain;
+    z-index: -1;
+    position: absolute;
+}
+
+
 
 header {
     display: grid;
