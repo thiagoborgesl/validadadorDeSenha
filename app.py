@@ -11,7 +11,7 @@ def check_password():
         password = request.form['password']
         hashed_password = hashlib.sha1(password.encode()).hexdigest().upper()
         prefix, tail = hashed_password[:5], hashed_password[5:]
-        response = requests.get(f'https://api.pwnedpasswords.com/range/{prefix}', verify=False)
+        response = requests.get(f'https://api.pwnedpasswords.com/range/{prefix}')
         hashes = (line.split(':') for line in response.text.splitlines())
         count = next((int(count) for t, count in hashes if t == tail), 0)
         if count:
